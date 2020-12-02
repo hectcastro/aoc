@@ -4,7 +4,10 @@ format:
 lint:
 	flake8 --exclude .venv .
 
-ci: lint
+types:
+	find . -name "*.py" | grep -v .venv | xargs mypy
+
+ci: lint types
 	black --check --diff .
 
-.PHONY: ci format lint
+.PHONY: ci format lint types

@@ -1,13 +1,17 @@
 import fileinput
 
+from fileinput import FileInput
 
-def handler(expenses):
-    expenses = list(map(int, expenses))
 
-    for i in expenses:
-        for j in expenses:
+def handler(expenses: FileInput) -> int:
+    entries = [int(expense) for expense in expenses]
+
+    for i in entries:
+        for j in entries:
             if i + j == 2020:
                 return i * j
+
+    return 0
 
 
 if __name__ == "__main__":
