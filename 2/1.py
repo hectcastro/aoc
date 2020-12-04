@@ -5,7 +5,7 @@ from typing import Iterable, Tuple
 
 
 def parse_entries(entry: str) -> Tuple[Iterable, str, str]:
-    policy, passwd = entry.split(":")
+    policy, passwd = entry.split(": ")
     rng, letter = policy.split(" ")
     start, end = rng.split("-")
 
