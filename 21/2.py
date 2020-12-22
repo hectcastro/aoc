@@ -1,5 +1,4 @@
 import fileinput
-import pprint
 
 from collections import defaultdict
 from fileinput import FileInput
