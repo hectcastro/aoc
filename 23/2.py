@@ -2,7 +2,7 @@ import sys
 
 from collections import defaultdict
 from dataclasses import dataclass
-from typing import Any, TextIO
+from typing import Any, Dict, TextIO
 
 CUP_NUMBER = 1000000
 STEP_NUMBER = 10000000
@@ -16,7 +16,7 @@ class Cup:
 
 def handler(raw_cups: TextIO) -> int:
     cups = [int(cup) for cup in raw_cups.read().strip()]
-    lookup_table = defaultdict(lambda: None)
+    lookup_table: Dict[int, Any] = defaultdict(lambda: None)
 
     for index in range(1, CUP_NUMBER + 1):
         lookup_table[index] = Cup(index, None)
