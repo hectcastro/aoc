@@ -18,7 +18,7 @@ jobs:
       - name: Install pipenv and project dependencies
         run: |
           python -m pip install --upgrade pipenv
-          pipenv install --pre
+          pipenv install --dev --pre
 
       - name: Run code linter and formatter
         run: |
