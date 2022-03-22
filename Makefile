@@ -11,5 +11,6 @@ types:
 
 ci: lint types
 	pipenv run black --check --diff 2020 2021
+	pipenv run isort --check --diff 2020 2021
 
 .PHONY: ci format lint types
