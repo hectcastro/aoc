@@ -1,5 +1,5 @@
-from collections import namedtuple
 import fileinput
+from collections import namedtuple
 from fileinput import FileInput
 
 Command = namedtuple("Command", ["direction", "unit"])

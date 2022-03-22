@@ -1,7 +1,7 @@
 import fileinput
+from enum import Enum
 from fileinput import FileInput
 from typing import Dict, List
-from enum import Enum
 
 
 class RatingType(Enum):

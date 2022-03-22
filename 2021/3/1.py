@@ -1,6 +1,6 @@
 import fileinput
-from fileinput import FileInput
 from collections import Counter
+from fileinput import FileInput
 from typing import List
 
 
