@@ -189,11 +189,11 @@
         },
         "types-dataclasses": {
             "hashes": [
-                "sha256:2f7ab6c565cf05cc7f27f31a4c2fcc803384e319aab292807b857ddf1473429f",
-                "sha256:fef6ed4742ca27996530c6d549cd704772a4a86e4781841c9bb387001e369ec3"
+                "sha256:2d6347ff290a17e802400ddc747c2e2c05f3d64dc4c29de9818dc497b808180a",
+                "sha256:c3226d0a93289f53aac7b55ced17fb18473e278247abdb8d85a8956f5fb4faa6"
             ],
             "index": "pypi",
-            "version": "==0.6.4"
+            "version": "==0.6.5"
         }
     },
     "develop": {
