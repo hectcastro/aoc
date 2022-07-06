@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-numpy = "~=1.22"
+numpy = "~=1.23"
 pandas = "~=1.4"
 regex = "2022.6.2"
 types-dataclasses = "~=0.6"
