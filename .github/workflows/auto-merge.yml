@@ -1,0 +1,22 @@
+name: auto-merge-dependabot
+
+on:
+  check_suite:
+    types:
+      - completed
+
+jobs:
+  merge-dependabot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ridedott/merge-me-action@v2
+        with:
+          GITHUB_LOGIN: "dependabot"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  merge-dependabot-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ridedott/merge-me-action@v2
+        with:
+          GITHUB_LOGIN: "dependabot-preview"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
