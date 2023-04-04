@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 numpy = "~=1.24"
-pandas = "~=1.5"
+pandas = "~=2.0"
 regex = "2022.10.31"
 types-dataclasses = "~=0.6"
 Cerberus = "~=1.3"
