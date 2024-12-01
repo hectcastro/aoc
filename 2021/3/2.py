@@ -21,9 +21,13 @@ def rating_system(binary_numbers: List, rating_type: RatingType) -> int:
         if (
             len(
                 binary_numbers := freq_table[
-                    "1"
-                    if comparison_function(len(freq_table["1"]), len(freq_table["0"]))
-                    else "0"
+                    (
+                        "1"
+                        if comparison_function(
+                            len(freq_table["1"]), len(freq_table["0"])
+                        )
+                        else "0"
+                    )
                 ]
             )
             == 1
