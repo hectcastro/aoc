@@ -16,4 +16,4 @@ flake8 = "~=6.0"
 mypy = "~=1.0"
 
 [requires]
-python_version = "3.13"
+python_version = "3.12"
