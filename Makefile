@@ -9,5 +9,6 @@ types:
 	find 2021 -type d | tail -n +2 | xargs -n1 pipenv run mypy
 
 ci: lint types
+	pipenv run ruff format --check 2020 2021
 
 .PHONY: ci format lint types
