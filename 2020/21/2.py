@@ -41,9 +41,7 @@ def handler(raw_foods: FileInput) -> str:
                 unmatchable_ingredient_count += 1
 
     visited = set()
-    while any(
-        len(ingredient_set) > 1 for ingredient_set in allergen_candidates.values()
-    ):
+    while any(len(ingredient_set) > 1 for ingredient_set in allergen_candidates.values()):
         for key, value in allergen_candidates.items():
             if len(value) == 1 and key not in visited:
                 visited.add(key)
@@ -52,10 +50,7 @@ def handler(raw_foods: FileInput) -> str:
             if key2 != key:
                 value2.difference_update(value)
 
-    return ",".join(
-        next(iter(v))
-        for _, v in sorted(allergen_candidates.items(), key=lambda v: v[0])
-    )
+    return ",".join(next(iter(v)) for _, v in sorted(allergen_candidates.items(), key=lambda v: v[0]))
 
 
 if __name__ == "__main__":

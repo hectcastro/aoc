@@ -2,9 +2,7 @@ import sys
 from typing import List, Set, TextIO, Tuple
 
 
-def create_boards(
-    raw_numbers: str, raw_boards: List[str]
-) -> Tuple[List[int], List[List[Set[int]]]]:
+def create_boards(raw_numbers: str, raw_boards: List[str]) -> Tuple[List[int], List[List[Set[int]]]]:
     numbers = [int(num) for num in raw_numbers.split(",")]
     boards = []
 

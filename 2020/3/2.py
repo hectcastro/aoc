@@ -12,10 +12,7 @@ def expand_grid(template_grid: List[List[str]], right: int) -> List[List[str]]:
 
     # Mutate the existing grid so that is of a width that can
     # support the number of moves necessary to get to the bottom.
-    grid = [
-        pattern * ((len(template_grid) // (len(pattern) // right)) + 1)
-        for pattern in template_grid
-    ]
+    grid = [pattern * ((len(template_grid) // (len(pattern) // right)) + 1) for pattern in template_grid]
 
     return grid
 

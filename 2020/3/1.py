@@ -16,10 +16,7 @@ def expand_grid(patterns: FileInput) -> List[List[str]]:
 
     # Mutate the existing grid so that is of a width that can
     # support the number of moves necessary to get to the bottom.
-    grid = [
-        pattern * ((len(grid) // (len(pattern) // MOVE_RIGHT_STEPS)) + 1)
-        for pattern in grid
-    ]
+    grid = [pattern * ((len(grid) // (len(pattern) // MOVE_RIGHT_STEPS)) + 1) for pattern in grid]
 
     return grid
 

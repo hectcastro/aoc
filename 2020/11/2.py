@@ -3,9 +3,7 @@ from fileinput import FileInput
 from typing import Dict, List, Tuple
 
 
-def neighbors(
-    x: int, y: int, seat_positions: Dict[Tuple[int, int], str], rows: int, columns: int
-) -> List[str]:
+def neighbors(x: int, y: int, seat_positions: Dict[Tuple[int, int], str], rows: int, columns: int) -> List[str]:
     adjacent_cells = []
 
     for direction in [

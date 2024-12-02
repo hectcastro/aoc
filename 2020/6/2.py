@@ -14,9 +14,7 @@ def handler(answer_sets: FileInput) -> int:
             # answer set with a set of unique group answers.
             #
             # Finally, add to a global list, with one entry per group.
-            common_group_answers.append(
-                len(unique_group_answers.intersection(*group_answers))
-            )
+            common_group_answers.append(len(unique_group_answers.intersection(*group_answers)))
             unique_group_answers.clear()
             group_answers.clear()
             continue

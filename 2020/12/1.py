@@ -14,9 +14,7 @@ def change_direction(current_direction: str, action: str, value: int) -> Any:
     elif action == "R":
         movement = operator.add
 
-    return DIRECTIONS[
-        movement(DIRECTIONS.index(current_direction), (value // 90)) % len(DIRECTIONS)
-    ]
+    return DIRECTIONS[movement(DIRECTIONS.index(current_direction), (value // 90)) % len(DIRECTIONS)]
 
 
 def handler(raw_instructions: FileInput) -> int:

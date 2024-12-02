@@ -21,9 +21,7 @@ def handler(raw_instructions: TextIO) -> int:
                 break
 
     earliest_bus_arrival_timestamp = min(schedule.values())
-    earliest_bus_id = list(schedule.keys())[
-        list(schedule.values()).index(earliest_bus_arrival_timestamp)
-    ]
+    earliest_bus_id = list(schedule.keys())[list(schedule.values()).index(earliest_bus_arrival_timestamp)]
 
     return (earliest_bus_arrival_timestamp - earliest_timestamp) * earliest_bus_id
 

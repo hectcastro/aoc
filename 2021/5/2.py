@@ -7,10 +7,7 @@ LineSegment = namedtuple("LineSegment", ["x1", "y1", "x2", "y2"])
 
 def parse_line_segment(line: str) -> LineSegment:
     start, end = line.split(" -> ")
-    return LineSegment(
-        *[int(coord) for coord in start.split(",")],
-        *[int(coord) for coord in end.split(",")]
-    )
+    return LineSegment(*[int(coord) for coord in start.split(",")], *[int(coord) for coord in end.split(",")])
 
 
 def handler(raw_line_segments: TextIO) -> int:

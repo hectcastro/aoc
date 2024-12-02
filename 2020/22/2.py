@@ -46,9 +46,7 @@ def crab_combat(player1_deck: Deque[int], player2_deck: Deque[int]) -> Tuple[str
             player1_recursive_deck = islice(player1_deck, 0, player1_card)
             player2_recursive_deck = islice(player2_deck, 0, player2_card)
 
-            winner, _ = crab_combat(
-                deque(player1_recursive_deck), deque(player2_recursive_deck)
-            )
+            winner, _ = crab_combat(deque(player1_recursive_deck), deque(player2_recursive_deck))
 
             if winner == "P1":
                 player1_deck.append(player1_card)

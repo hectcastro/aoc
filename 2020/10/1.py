@@ -13,9 +13,7 @@ def handler(raw_output_joltages: TextIO) -> int:
         ADAPTER_OUTPUT_JOLTAGES.append(int(raw_output_joltage))
 
     # Add built-in adapter joltage, which is max of adapters + 3.
-    ADAPTER_OUTPUT_JOLTAGES.append(
-        max(ADAPTER_OUTPUT_JOLTAGES) + BUILT_IN_ADAPTER_JOLTAGE
-    )
+    ADAPTER_OUTPUT_JOLTAGES.append(max(ADAPTER_OUTPUT_JOLTAGES) + BUILT_IN_ADAPTER_JOLTAGE)
 
     outlet_joltage = 0
 

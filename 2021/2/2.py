@@ -7,8 +7,7 @@ Command = namedtuple("Command", ["direction", "unit"])
 
 def handler(raw_commands: FileInput) -> int:
     commands = [
-        Command(*[instruction.strip() for instruction in raw_command.split(" ")])
-        for raw_command in raw_commands
+        Command(*[instruction.strip() for instruction in raw_command.split(" ")]) for raw_command in raw_commands
     ]
     horizontal_position, depth, aim = 0, 0, 0
 

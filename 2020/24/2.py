@@ -47,11 +47,7 @@ def handler(raw_tiles: FileInput) -> int:
     for _ in range(100):
         all_neighbors = Counter([p for pos in blacks for p in neighbors(*pos)])
 
-        blacks = {
-            pos
-            for pos, answer in all_neighbors.items()
-            if answer == 2 or (answer == 1 and pos in blacks)
-        }
+        blacks = {pos for pos, answer in all_neighbors.items() if answer == 2 or (answer == 1 and pos in blacks)}
 
     return len(blacks)
 

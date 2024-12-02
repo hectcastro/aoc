@@ -38,9 +38,7 @@ def handler(raw_expressions: FileInput) -> int:
     total = 0
 
     for raw_expression in raw_expressions:
-        expression_total = custom_eval(
-            raw_expression.strip(), SwapAddWithMult, [("+", "*"), ("*", "+")]
-        )
+        expression_total = custom_eval(raw_expression.strip(), SwapAddWithMult, [("+", "*"), ("*", "+")])
         total += expression_total
 
     return total

@@ -4,9 +4,7 @@ from itertools import product
 from typing import Dict, Generator, TextIO, Tuple, cast
 
 
-def neighborhood(
-    coord: Tuple[int, int, int]
-) -> Generator[Tuple[int, int, int], None, None]:
+def neighborhood(coord: Tuple[int, int, int]) -> Generator[Tuple[int, int, int], None, None]:
     for offset in product([-1, 0, 1], repeat=len(coord)):
         yield cast(
             Tuple[int, int, int],

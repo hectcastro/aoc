@@ -27,9 +27,7 @@ def handler(raw_rules_and_messages: TextIO) -> int:
     rule_zero_matches = 0
 
     for raw_message in raw_messages.strip().splitlines():
-        rule_zero_matches += (
-            regex.compile(group_rule_by_index(0)).fullmatch(raw_message) is not None
-        )
+        rule_zero_matches += regex.compile(group_rule_by_index(0)).fullmatch(raw_message) is not None
 
     return rule_zero_matches
 

@@ -7,9 +7,7 @@ LIMIT = 2020
 def handler(raw_starting_numbers: TextIO) -> int:
     starting_numbers: List[str] = raw_starting_numbers.read().strip().split(",")
     numbers: List[int] = [int(number) for number in starting_numbers]
-    numbers_and_turns: Dict[int, int] = dict(
-        zip(numbers[:-1], range(1, len(numbers) + 1))
-    )
+    numbers_and_turns: Dict[int, int] = dict(zip(numbers[:-1], range(1, len(numbers) + 1)))
     last_number = numbers[-1]
 
     for turn in range(len(numbers) + 1, LIMIT + 1):

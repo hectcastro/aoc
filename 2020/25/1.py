@@ -13,9 +13,7 @@ def card_loop_size(subject: int, public_key: int) -> int:
 
 
 def handler(raw_public_keys: TextIO) -> int:
-    door_public_key, card_public_key = map(
-        int, raw_public_keys.read().strip().split("\n")
-    )
+    door_public_key, card_public_key = map(int, raw_public_keys.read().strip().split("\n"))
 
     return pow(door_public_key, card_loop_size(7, card_public_key), MOD)
 
