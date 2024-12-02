@@ -27,7 +27,7 @@ def handler(raw_region: TextIO) -> int:
     while True:
         active_region: Dict[Tuple[int, int, int], int] = defaultdict(int)
 
-        for coords in region:
+        for coords in region:  # noqa: PLC0206
             if region[coords] == ".":
                 continue
 

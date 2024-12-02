@@ -21,7 +21,7 @@ def handler(raw_foods: FileInput) -> str:
 
     allergen_candidates: Dict[str, Set[str]] = {}
 
-    for allergen in allergen_index.keys():
+    for allergen in allergen_index.keys():  # noqa: PLC0206
         allergen_candidate: List[Set] = []
 
         for al in allergen_index[allergen]:

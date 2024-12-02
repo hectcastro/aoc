@@ -1,12 +1,12 @@
 import fileinput
 import operator
 from fileinput import FileInput
-from typing import Dict
+from typing import Any, Dict
 
 DIRECTIONS = ["N", "E", "S", "W"]
 
 
-def change_direction(current_direction: str, action: str, value: int) -> str:
+def change_direction(current_direction: str, action: str, value: int) -> Any:
     movement = operator.add
 
     if action == "L":

@@ -13,7 +13,7 @@ class Cup:
     next: Any
 
 
-def handler(raw_cups: TextIO) -> int:
+def handler(raw_cups: TextIO) -> Any:
     cups = [int(cup) for cup in raw_cups.read().strip()]
     lookup_table: Dict[int, Any] = defaultdict(lambda: None)
 

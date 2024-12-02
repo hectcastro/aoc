@@ -34,7 +34,7 @@ def handler(raw_seat_positions: FileInput) -> int:
     while True:
         new_seat_positions: Dict[Tuple[int, int], str] = {}
 
-        for x, y in seat_positions.keys():
+        for x, y in seat_positions.keys():  # noqa: PLC0206
             adjacent_cells = neighbors(x, y, seat_positions)
             new_seat_positions[(x, y)] = seat_positions[(x, y)]
 

@@ -1,7 +1,7 @@
 import ast
 import fileinput
 from fileinput import FileInput
-from typing import Tuple, Type
+from typing import Any, Tuple, Type
 
 
 class SwapSubWithMult(ast.NodeTransformer):
@@ -13,7 +13,7 @@ def custom_eval(
     expression: str,
     node_transformer: Type[ast.NodeTransformer],
     operators: Tuple[str, str],
-) -> int:
+) -> Any:
     new_ast = ast.parse(expression.replace(operators[0], operators[1]), mode="eval")
     return eval(compile(node_transformer().visit(new_ast), "<string>", "eval"))
 

@@ -1,7 +1,7 @@
 import ast
 import fileinput
 from fileinput import FileInput
-from typing import List, Tuple, Type
+from typing import Any, List, Tuple, Type
 
 
 class SwapAddWithMult(ast.NodeTransformer):
@@ -16,7 +16,7 @@ def custom_eval(
     expression: str,
     node_transformer: Type[ast.NodeTransformer],
     operators: List[Tuple[str, str]],
-) -> int:
+) -> Any:
     new_expression = []
 
     for elem in expression:
