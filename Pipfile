@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 pandas = "*"
-regex = "2023.6.3"
+regex = "2024.11.6"
 types-dataclasses = "~=0.6"
 Cerberus = "~=1.3"
 
