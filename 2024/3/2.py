@@ -1,11 +1,24 @@
 import fileinput
 import re
-from collections import namedtuple
+from dataclasses import dataclass
 from fileinput import FileInput
 
-MulInstruction = namedtuple("MulInstruction", ["pos", "x", "y"])
-DoInstruction = namedtuple("DoInstruction", ["pos"])
-DontInstruction = namedtuple("DontInstruction", ["pos"])
+
+@dataclass
+class MulInstruction:
+    pos: int
+    x: int
+    y: int
+
+
+@dataclass
+class DoInstruction:
+    pos: int
+
+
+@dataclass
+class DontInstruction:
+    pos: int
 
 
 def handler(raw_instructions: FileInput) -> int:
@@ -19,7 +32,7 @@ def handler(raw_instructions: FileInput) -> int:
     matches_do = list(re.finditer(pattern_do, all_instructions))
     matches_dont = list(re.finditer(pattern_dont, all_instructions))
 
-    instructions = []
+    instructions: list[MulInstruction | DoInstruction | DontInstruction] = []
 
     instructions.extend([MulInstruction(pos=m.start(), x=int(m.group(1)), y=int(m.group(2))) for m in matches_mul])
     instructions.extend([DoInstruction(pos=m.start()) for m in matches_do])
