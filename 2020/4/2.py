@@ -2,7 +2,7 @@ import re
 import sys
 from typing import Callable, TextIO
 
-from cerberus import Validator  # type: ignore
+from cerberus import Validator
 
 
 # Provide a custom field validation function for a height with units.

@@ -20,15 +20,27 @@ target-version = "py312"
 select = ["E", "F", "W", "A", "PLC", "PLE", "PLW", "I"]
 ignore = ["PLW0603", "PLW2901"]
 
-[tool.mypy]
-python_version = "3.12"
-warn_return_any = true
-warn_unused_configs = true
+[tool.ty.environment]
+python-version = "3.12"
+
+# Default rules (strict) - will apply to 2025 and future years
+# All rules are errors by default
+
+# Override rules for legacy years (2020, 2021, 2024)
+[[tool.ty.overrides]]
+include = ["2020/**", "2021/**", "2024/**"]
+
+[tool.ty.overrides.rules]
+too-many-positional-arguments = "warn"
+unknown-argument = "warn"
+invalid-argument-type = "warn"
+invalid-method-override = "warn"
+invalid-assignment = "warn"
 
 [dependency-groups]
 dev = [
-    "mypy>=1.13.0",
     "pandas-stubs>=2.2.3.241126",
     "ruff>=0.8.2",
+    "ty==0.0.1a29",
     "types-networkx>=3.4.2.20241115",
 ]

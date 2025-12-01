@@ -27,11 +27,16 @@ def handler(raw_foods: FileInput) -> str:
         for al in allergen_index[allergen]:
             allergen_candidate.append(set(all_ingredients[al]))
 
-        allergen_candidates[allergen] = set.intersection(*allergen_candidate)
+        if allergen_candidate:
+            allergen_candidates[allergen] = allergen_candidate[0].intersection(*allergen_candidate[1:])
 
-    unmatchable_ingredients: Set[str] = set(list(chain(*all_ingredients))).difference(
-        set.union(*(allergen_candidates.values()))
-    )
+    values_list = list(allergen_candidates.values())
+    if values_list:
+        all_allergen_ingredients = values_list[0].union(*values_list[1:])
+    else:
+        all_allergen_ingredients = set()
+
+    unmatchable_ingredients: Set[str] = set(list(chain(*all_ingredients))).difference(all_allergen_ingredients)
 
     unmatchable_ingredient_count = 0
 

@@ -18,7 +18,7 @@ def handler(raw_program: TextIO) -> int:
         address = int(raw_address.lstrip("mem[").rstrip("]"))
         binary_address = bin(address)[2:].zfill(36)
 
-        for bits in map(iter, product("01", repeat=mask.count("X"))):  # type: ignore
+        for bits in map(iter, product("01", repeat=mask.count("X"))):
             new_address: List[str] = []
 
             for bit, val in zip(mask, binary_address):

@@ -1,7 +1,7 @@
 import fileinput
 from fileinput import FileInput
 
-import numpy as np  # type: ignore
+import numpy as np
 
 ROWS = 128
 COLUMNS = 8

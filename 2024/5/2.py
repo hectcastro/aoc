@@ -44,7 +44,7 @@ def parse_ordering_rules_and_updates(raw_lines: FileInput) -> tuple[List[Orderin
 
 def reorder_and_get_middle_page(rules: list[OrderingRule]) -> int:
     """Reorders pages based on ordering rules and returns the middle page number."""
-    dependencies: dict[int, set[int]] = defaultdict(set)
+    dependencies: defaultdict[int, set[int]] = defaultdict(set)
 
     # Add dependencies based on ordering rules.
     for rule in rules:

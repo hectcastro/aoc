@@ -27,11 +27,11 @@ def handler(raw_input: TextIO) -> int:
             if board is not None:
                 if {number} in board:
                     winner = get_winning_score(number, board)
-                    boards[idx] = None  # type: ignore
+                    boards[idx] = None
                     if idx % 2:
-                        boards[idx - 1] = None  # type: ignore
+                        boards[idx - 1] = None
                     else:
-                        boards[idx + 1] = None  # type: ignore
+                        boards[idx + 1] = None
                 else:
                     boards[idx] = [group.difference({number}) for group in board]
 

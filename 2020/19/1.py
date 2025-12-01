@@ -1,7 +1,7 @@
 import sys
 from typing import Dict, TextIO
 
-import regex  # type: ignore
+import regex
 
 RULES: Dict[int, str] = {}
 
