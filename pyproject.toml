@@ -30,5 +30,5 @@ dev = [
     "mypy>=1.13.0",
     "pandas-stubs>=2.2.3.241126",
     "ruff>=0.8.2",
-    "types-networkx>=3.4.2.20241115",
+    "types-networkx>=3.6.1.20260408",
 ]
