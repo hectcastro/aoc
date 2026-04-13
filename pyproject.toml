@@ -28,7 +28,7 @@ warn_unused_configs = true
 [dependency-groups]
 dev = [
     "mypy>=1.13.0",
-    "pandas-stubs>=2.2.3.241126",
+    "pandas-stubs>=3.0.0.260204",
     "ruff>=0.8.2",
     "types-networkx>=3.4.2.20241115",
 ]
