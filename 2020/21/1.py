@@ -30,7 +30,7 @@ def handler(raw_foods: FileInput) -> int:
         allergen_candidates[allergen] = set.intersection(*allergen_candidate)
 
     unmatchable_ingredients: Set[str] = set(list(chain(*all_ingredients))).difference(
-        set.union(*(allergen_candidates.values()))
+        set().union(*allergen_candidates.values())
     )
 
     unmatchable_ingredient_count = 0
