@@ -8,7 +8,7 @@ dependencies = [
     "cerberus~=1.3",
     "networkx>=3.6.1",
     "pandas>=3.0.5",
-    "regex==2026.7.19",
+    "regex==2026.8.31",
     "types-dataclasses~=0.6",
 ]
 
